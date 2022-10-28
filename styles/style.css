@@ -217,6 +217,7 @@ button:hover {
 
     .header__title {
         font-size: var(--ls-title);
+        line-height: 1.2;
     }
 
     .form {
