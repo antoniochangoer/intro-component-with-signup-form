@@ -18,10 +18,22 @@
       <div class="header__form">
         <p class="form__trial-text"><span>Try it free 7 days</span> then $20/mo. thereafter</p>
         <form action="#" class="form">
-          <input type="text" name="username" placeholder="First Name">
-          <input type="text" name="lastname" placeholder="Last Name">
-          <input id="email" type="email" name="email" placeholder="Email Address">
-          <input type="password" name="password" placeholder="Password">
+          <label for="firstname">
+            <input id="firstname" type="text" name="firstname" placeholder="First Name">
+            <span>First name can not be empty</span>
+          </label>
+          <label for="lastname">
+            <input  id="lastname" type="text" name="lastname" placeholder="Last Name">
+            <span>Last name can not be empty</span>
+          </label>
+          <label for="email">
+            <input id="email" type="text" name="email" placeholder="Email Address">
+            <span>Looks like this is not an email</span>
+          </label>
+          <label for="password">
+            <input id="password" type="password" name="password" placeholder="Password">
+            <span>Password name can not be empty</span>
+          </label>
           <button type="submit" name="submit">Claim your free trial</button>
           <small class="form__terms">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></small>
         </form>

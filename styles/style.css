@@ -7,6 +7,7 @@
     --grey-blue: #3D3B48;
     --light-grey: #BAB7D4;
     --white: #ffffff;
+    --border-default: #DEDEDE;
 
     --ff: 'Poppins', sans-serif;
     --fs-body: 1.6rem;
@@ -71,12 +72,17 @@ main {
 
 .container {
     /* max-width: min(32rem, 54rem); */
-    max-width: min(54rem, 90%);
+    /* max-width: min(54rem, 90%); */
+    max-width: 90%;
     margin-inline: auto;
 }
 
 .header {
     color: var(--white);
+}
+
+.header__text {
+    max-width: 52rem;
 }
 
 .header__title {
@@ -91,7 +97,7 @@ main {
 }
 
 .header__form {
-
+    max-width: 54rem;
 }
 
 .form__trial-text {
@@ -120,12 +126,53 @@ input {
     font-weight: var(--fw-sb);
     color: var(--grey-blue);
     padding: 1.4rem;
-    border: 1px solid #DEDEDE;
+    outline: none;
+    border: 1px solid var(--border-default);
     border-radius: 5px;
+    width: 100%;
 }
 
-input:not(:last-child) {
+label {
+    position: relative;
+}
+
+.error::before {
+    content: "";
+    height: 24px;
+    width: 24px;
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    background-image: url('../images/icon-error.svg');
+    background-repeat: no-repeat;    
+}
+
+.warning {
+    border: 1px solid red;
+}
+
+.warning::placeholder {
+    color: red;
+}
+
+label span {
+    display: none;
+}
+
+.warning-msg {
+    color: red;
+    font-size: var(--form-terms);
+    display: flex;
+    justify-content: end;
+}
+
+label:not(:last-child) {
     margin-bottom: 1.6rem;
+}
+
+input:focus {
+    border: 1px solid var(--purple);
 }
 
 button {
@@ -141,6 +188,11 @@ button {
     background-color: var(--green);
     border-radius: 5px;
     box-shadow: inset 0 -17px 0px -12px rgb(0 0 0 / 12%);
+    transition: all .2s ease;
+}
+
+button:hover {
+    background-color: #77E2B3;
 }
 
 .form__terms {
@@ -153,4 +205,27 @@ button {
 .form__terms a{
     font-weight: var(--fw-b);
     color: var(--salmon);
+}
+
+@media (min-width: 1150px) {
+    .header {
+        display: flex;
+        gap: 4.5rem;
+    }
+
+    .header__text {
+        align-self: center;
+    }
+
+    .header__title {
+        font-size: var(--ls-title);
+    }
+
+    .form {
+        padding: 4rem;
+    }
+
+    label:not(:last-child) {
+        margin-bottom: 2rem;
+    }
 }
