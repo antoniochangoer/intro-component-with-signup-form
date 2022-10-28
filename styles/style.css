@@ -149,11 +149,11 @@ label {
 }
 
 .warning {
-    border: 1px solid red;
+    border: 1px solid var(--salmon);
 }
 
 .warning::placeholder {
-    color: red;
+    color: var(--salmon);
 }
 
 label span {
@@ -161,7 +161,7 @@ label span {
 }
 
 .warning-msg {
-    color: red;
+    color: var(--salmon);
     font-size: var(--form-terms);
     display: flex;
     justify-content: end;
